@@ -1,5 +1,6 @@
-### Chasing Your Tail V07_02_21
+### Chasing Your Tail V04_15_22
 ### @matt0177
+### Released under the MIT License https://opensource.org/licenses/MIT
 ###
 
 import sqlite3
