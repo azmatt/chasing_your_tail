@@ -22,7 +22,7 @@ def func_create_ignore():
     
 def func_run_cyt():
     print("Running CYT")
-    subprocess.call(["lxterminal", "-e" , "/home/pi/Desktop/cyt/chassing_your_tail.sh"])
+    subprocess.call(["lxterminal", "-e" , "/home/pi/Desktop/cyt/chasing_your_tail.sh"])
 
 root = tk.Tk()
 root.title('Chasing Your Tail Viewer')
