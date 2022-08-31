@@ -189,7 +189,7 @@ def probe_request_sql_fetch_past_5(con):
     cursorObj.execute("SELECT devmac, type, device FROM devices WHERE last_time >= {}".format(unixtime_5_ago)) 
     rows = cursorObj.fetchall()
     for row in rows:
-        raw_device_json = json.loads(row[2])
+        raw_device_json = json.loads(str(row[2], errors='ignore'))
         if 'dot11.probedssid.ssid' in str(row):
             ssid_probed_for = raw_device_json["dot11.device"]["dot11.device.last_probed_ssid_record"]["dot11.probedssid.ssid"] ### Grabbed SSID Probed for
             #print ('in 5 mins list with {}'.format(ssid_probed_for))
@@ -213,7 +213,7 @@ def probe_request_sql_fetch_5_to_10(con):
     cursorObj.execute("SELECT devmac, type, device FROM devices WHERE last_time <= {} AND last_time >= {} ".format(unixtime_5_ago, unixtime_10_ago)) 
     rows = cursorObj.fetchall()
     for row in rows:
-        raw_device_json = json.loads(row[2])
+        raw_device_json = json.loads(str(row[2], errors='ignore'))
         if 'dot11.probedssid.ssid' in str(row):
             ssid_probed_for = raw_device_json["dot11.device"]["dot11.device.last_probed_ssid_record"]["dot11.probedssid.ssid"] ### Grabbed SSID Probed for
             #print ('in 5 mins list with {}'.format(ssid_probed_for))
@@ -237,7 +237,7 @@ def probe_request_sql_fetch_10_to_15(con):
     cursorObj.execute("SELECT devmac, type, device FROM devices WHERE last_time <= {} AND last_time >= {} ".format(unixtime_10_ago, unixtime_15_ago)) 
     rows = cursorObj.fetchall()
     for row in rows:
-        raw_device_json = json.loads(row[2])
+        raw_device_json = json.loads(str(row[2], errors='ignore'))
         if 'dot11.probedssid.ssid' in str(row):
             ssid_probed_for = raw_device_json["dot11.device"]["dot11.device.last_probed_ssid_record"]["dot11.probedssid.ssid"] ### Grabbed SSID Probed for
             #print ('in 10 mins list with {}'.format(ssid_probed_for))
@@ -260,7 +260,7 @@ def probe_request_sql_fetch_15_to_20(con):
     cursorObj.execute("SELECT devmac, type, device FROM devices WHERE last_time <= {} AND last_time >= {} ".format(unixtime_15_ago, unixtime_20_ago)) 
     rows = cursorObj.fetchall()
     for row in rows:
-        raw_device_json = json.loads(row[2])
+        raw_device_json = json.loads(str(row[2], errors='ignore'))
         if 'dot11.probedssid.ssid' in str(row):
             ssid_probed_for = raw_device_json["dot11.device"]["dot11.device.last_probed_ssid_record"]["dot11.probedssid.ssid"] ### Grabbed SSID Probed for
             #print ('in 15 mins list with {}'.format(ssid_probed_for))
@@ -285,7 +285,7 @@ def sql_fetch_current(con):
     cursorObj.execute("SELECT devmac, type, device FROM devices WHERE last_time >= {}".format(unixtime_2_ago)) 
     rows = cursorObj.fetchall()
     for row in rows:
-        raw_device_json = json.loads(row[2])
+        raw_device_json = json.loads(str(row[2], errors='ignore'))
         if 'dot11.probedssid.ssid' in str(row):
             ssid_probed_for = raw_device_json["dot11.device"]["dot11.device.last_probed_ssid_record"]["dot11.probedssid.ssid"] ### Grabbed SSID Probed for
             if ssid_probed_for == '':
