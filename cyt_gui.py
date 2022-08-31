@@ -29,7 +29,29 @@ root.title('Chasing Your Tail Viewer')
 frame = tk.Frame(root)
 frame.pack()
 
-button = tk.Button(
+button_quit = tk.Button(frame, 
+                       text="QUIT", 
+                       width=15,
+                       height=5,
+                       fg="red",
+                       relief="groove",
+                       command=quit)
+button_quit.pack(side=tk.LEFT)
+
+check_status = tk.Button(frame,
+                   text="Check Status",
+                       width=15,
+                       height=5,
+                       fg="green",
+                       relief="groove",
+                       command=write_slogan)
+check_status.pack(side=tk.LEFT)
+
+frame = tk.Frame(root)
+frame.pack()
+
+button = tk.Button(frame,
+    relief="groove",
     text="Delete Ignore Lists",
     width=15,
     height=5,
@@ -40,39 +62,22 @@ button = tk.Button(
 
 button.pack(side=tk.LEFT)
 
-button_quit = tk.Button(frame, 
-                   text="QUIT", 
-                       width=15,
-                       height=5,
-                   fg="red",
-                   command=quit)
-button_quit.pack(side=tk.LEFT)
-
-check_status = tk.Button(frame,
-                   text="Check Status",
-                       width=15,
-                       height=5,
-                       fg="green",
-                   command=write_slogan)
-check_status.pack(side=tk.LEFT)
-
-frame = tk.Frame(root)
-frame.pack()
-
 create_ignore = tk.Button(frame,
                        width=15,
                        height=5,
-                   text="Create Ignore Lists",
-                   command=func_create_ignore)
+                       text="Create Ignore Lists",
+                       relief="groove",
+                       command=func_create_ignore)
 create_ignore .pack(side=tk.LEFT)
 
 
 butn_run_cyt = tk.Button(frame,
-                       width=15,
+                       width=16,
                        height=5,
                        fg="green",
-                   text="Run Chasing Your Tail",
-                   command=func_run_cyt)
+                       text="Run Chasing Your Tail",
+                       relief="groove",
+                       command=func_run_cyt)
 butn_run_cyt .pack(side=tk.LEFT)
 
 
