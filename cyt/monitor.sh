@@ -15,10 +15,19 @@ fi
 string=$(iwconfig wlan0 & iwconfig wlan1 )
 if [[ $string == *"Mode:Monitor"* ]]; then
 	echo -e "${GREEN}Monitor Mode Detected${NC}"
-	echo
 else
 	echo -e "${RED}Monitor Mode Not Detected${NC}"
-	echo
-fi 
+fi
+
+numGpsprocesses=$(ps aux | grep -i 'gpsd' | wc -l)
+#echo $numGpsprocesses
+if [[ $numGpsprocesses > 1 ]] ; then
+                echo -e "${GREEN}GPSD up${NC}"
+		echo
+        else
+                echo -e "${RED}GPSD down${NC}"
+		echo
+fi
+
 sleep 10;
 done

@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 import subprocess
 
 
@@ -23,6 +24,10 @@ def func_create_ignore():
 def func_run_cyt():
     print("Running CYT")
     subprocess.call(["lxterminal", "-e" , "/home/pi/Desktop/cyt/chasing_your_tail.sh"])
+
+def on_closing():
+    if messagebox.askokcancel("Quit", "Do you want to quit?"):
+        root.destroy()
 
 root = tk.Tk()
 root.title('Chasing Your Tail Viewer')
@@ -80,5 +85,5 @@ butn_run_cyt = tk.Button(frame,
                        command=func_run_cyt)
 butn_run_cyt .pack(side=tk.LEFT)
 
-
+root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
