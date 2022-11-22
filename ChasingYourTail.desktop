@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=Python application to know if someone is following you
+Version=1.0
+Type=Application
+Terminal=false
+Icon=/home/pi/Desktop/cyt/resources/cyt_icon.png
+Exec=sh /home/pi/Desktop/cyt_gui.sh
+Name=Chasing Your Tail
+Categories=Utility
