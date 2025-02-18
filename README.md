@@ -1,4 +1,2 @@
 # chasing_your_tail
-Tool for using nearby wireless signals to help determine if you're being followed. 
-
-Released under the MIT License https://opensource.org/licenses/MIT
+This project is no longer maintained. Check out the current (much better) version at: https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG
